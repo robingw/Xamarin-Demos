@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:CardViewDemo.ViewModels"
+             x:Class="CardViewDemo.Views.MyContentPage">
+    <ContentPage.BindingContext>
+        <viewmodels:MyContentPageViewModel x:Name="viewModel" />
+    </ContentPage.BindingContext>
+    <Label Text="{Binding Content}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label.GestureRecognizers>
+            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TurnToSubPage"/>
+        </Label.GestureRecognizers>
+    </Label>
+</ContentPage>

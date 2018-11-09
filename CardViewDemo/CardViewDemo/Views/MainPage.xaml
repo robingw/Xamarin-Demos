@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:views="clr-namespace:CardViewDemo.Views"
+            x:Class="CardViewDemo.Views.MainPage"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom">
+        <views:MyContentPage x:Name="contentPage1" Title="View 1" Icon="tab_about.png"/>
+        <views:MyContentPage x:Name="contentPage2" Title="View 2" Icon="tab_about.png"/>
+        <views:MyContentPage x:Name="contentPage3" Title="View 3" Icon="tab_about.png"/>
+        <views:MyContentPage x:Name="contentPage4" Title="View 4" Icon="tab_about.png"/>
+</TabbedPage>
