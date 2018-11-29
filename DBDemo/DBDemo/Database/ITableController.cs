@@ -21,7 +21,7 @@ namespace DBDemo.Database
         // 保存一条记录
         Task<int> SaveItemAsync(T item);
         // 根据id删除记录
-        Task<int> DeleteItemAsync(int id);
+        Task<int> DeleteItemAsync(T item);
         // 清空表
         Task EmptyItemsAsync();
     }

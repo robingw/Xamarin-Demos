@@ -36,7 +36,7 @@ namespace DBDemo.Database.Controller
             }
         }
 
-        public Task<int> DeleteItemAsync(int id) => database.DeleteAsync(id);
+        public Task<int> DeleteItemAsync(TestTable item) => database.DeleteAsync(item);
 
         public Task EmptyItemsAsync() => null;
     }

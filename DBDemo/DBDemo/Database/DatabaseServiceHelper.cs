@@ -34,7 +34,7 @@ namespace DBDemo.Database
         public Task<int> SaveItemAsync(V item) => controller.SaveItemAsync(item);
 
         // 根据id删除记录
-        public Task<int> DeleteItemAsync(int id) => controller.DeleteItemAsync(id);
+        public Task<int> DeleteItemAsync(V item) => controller.DeleteItemAsync(item);
 
         // 清空表
         public Task EmptyItemsAsync() => controller.EmptyItemsAsync();
