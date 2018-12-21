@@ -13,5 +13,10 @@ namespace AnimationProperty
         {
             InitializeComponent();
         }
+
+        void Refresh_Clicked(object sender, System.EventArgs e)
+        {
+            viewModel.Refresh();
+        }
     }
 }

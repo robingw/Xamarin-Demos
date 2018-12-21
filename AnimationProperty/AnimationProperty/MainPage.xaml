@@ -1,7 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AnimationProperty" x:Class="AnimationProperty.MainPage">
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AnimationProperty"
+             xmlns:viewmodels="clr-namespace:AnimationProperty.ViewModels"
+             x:Class="AnimationProperty.MainPage">
+    <ContentPage.BindingContext>
+        <viewmodels:MainPageViewModel x:Name="viewModel" />
+    </ContentPage.BindingContext>
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+            <Label Text="{Binding Hour}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="60" TextColor="Olive" />
+            <Label Text=" : " HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="60" TextColor="Olive" />
+            <Label Text="{Binding Minute}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="60" TextColor="Olive" />
+            <Label Text=" : " HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="60" TextColor="Olive" />
+            <Label Text="{Binding Second}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="60" TextColor="Olive" />
+        </StackLayout>
+        <ProgressBar Progress="{Binding Percent}" HeightRequest="8" HorizontalOptions="FillAndExpand" ProgressColor="Olive" />
+        <Button Text="刷新" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Clicked="Refresh_Clicked" />
     </StackLayout>
 </ContentPage>
