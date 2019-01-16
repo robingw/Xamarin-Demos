@@ -1,5 +1,7 @@
 ﻿using Android.Content;
+using Android.Support.Design.BottomNavigation;
 using Android.Support.Design.Internal;
+using Android.Support.Design.Widget;
 using Android.Views;
 using CardViewDemo.Droid.Controls;
 using Xamarin.Forms;
@@ -19,26 +21,12 @@ namespace CardViewDemo.Droid.Controls
 
             if (ViewGroup != null && ViewGroup.ChildCount > 0)
             {
-                BottomNavigationMenuView bottomNavigationMenuView = FindChildOfType<BottomNavigationMenuView>(ViewGroup);
+                BottomNavigationView bottomNavigationView = FindChildOfType<BottomNavigationView>(ViewGroup);
 
-                if (bottomNavigationMenuView != null)
+                if (bottomNavigationView != null)
                 {
-                    var shiftMode = bottomNavigationMenuView.Class.GetDeclaredField("mShiftingMode");
-
-                    shiftMode.Accessible = true;
-                    shiftMode.SetBoolean(bottomNavigationMenuView, false);
-                    shiftMode.Accessible = false;
-                    shiftMode.Dispose();
-
-                    for (var i = 0; i < bottomNavigationMenuView.ChildCount; i++)
-                    {
-                        var item = bottomNavigationMenuView.GetChildAt(i) as BottomNavigationItemView ;
-                        if (item == null) continue;
-
-                        item.SetShiftingMode(false);
-                    }
-
-                    if (bottomNavigationMenuView.ChildCount > 0) bottomNavigationMenuView.UpdateMenuView();
+                    bottomNavigationView.ItemHorizontalTranslationEnabled = false;
+                    bottomNavigationView.LabelVisibilityMode = LabelVisibilityMode.LabelVisibilityLabeled;
                 }
             }
         }
