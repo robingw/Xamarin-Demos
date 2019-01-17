@@ -1,0 +1,23 @@
+﻿<html>
+<body>
+    <script src="jquery.min.js"></script>
+    <script src="invokeNativeActions.js"></script>
+    <h1>JS Invoke Demo</h1>
+    <br />
+    <p id="result">Result:</p>
+    <br />
+    Input: <input type="text" id="testinput">
+    <br />
+    <button type="button" onclick="javascript:invokeTestInput($('#testinput').val());">Test Input</button>
+    <br />
+    <br />
+    <button type="button" onclick="javascript:invokeTestProgress();">Test Progress</button>
+    <br />
+    <br />
+    Property: <input type="text" id="propertyname">
+    <br />
+    Value: <input type="text" id="propertyvalue">
+    <br />
+    <button type="button" onclick="javascript:invokeSetPropertyValue($('#propertyname').val(), $('#propertyvalue').val());">Set Property</button>
+</body>
+</html>
